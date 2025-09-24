@@ -34,7 +34,7 @@ A simple backend API built with **FastAPI** and **SQLite** that tracks carbon cr
 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/mohdgeelani/Carbon-Ledger-API.git
 cd carbon_ledger_api
 ```
 2. Create and activate a virtual environment (optional but recommended)
