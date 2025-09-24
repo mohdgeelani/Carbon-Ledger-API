@@ -19,7 +19,7 @@ class Event(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     record_id = Column(String, ForeignKey("records.id"))
-    event_type = Column(String, nullable=False)  # e.g., "created" or "retired"
+    event_type = Column(String, nullable=False)  
     timestamp = Column(DateTime(timezone=True), server_default=func.now())
 
     record = relationship("Record", back_populates="events")

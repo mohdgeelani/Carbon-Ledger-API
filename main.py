@@ -49,7 +49,6 @@ def create_record(record: RecordCreate, db: Session = Depends(get_db)):
     )
     db.add(new_record)
 
-    # Add "created" event
     event = Event(
         record_id=record_id,
         event_type="created"
@@ -64,7 +63,7 @@ def create_record(record: RecordCreate, db: Session = Depends(get_db)):
 
 @app.post("/records/{record_id}/retire")
 def retire_record(record_id: str, db: Session = Depends(get_db)):
-    # Find the record by ID
+
     db_record = db.query(Record).filter(Record.id == record_id).first()
     if not db_record:
         raise HTTPException(status_code=404, detail="Record not found")
